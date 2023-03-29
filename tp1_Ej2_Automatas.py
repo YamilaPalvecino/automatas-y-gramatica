@@ -1,31 +1,26 @@
-from functools import reduce
-
 def solve(string):
 
-    tokens = string.split("+")
-    sum = 0
-    producto = 1
+    items = string.split()
+    nums = [int(item) for item in items if item.isdigit()]
 
-    #operación multiplicación
-    for element in tokens:
-        if "*" in element:
-            multi_str = element.split('*')
-            multi_int = [int(numero) for numero in multi_str]
-            producto = reduce(lambda x, y: x * y, multi_int)
-            tokens.remove(element)
+    i = 0
+    while i < len(items):
+        if items[i] == '*':
+            nums[i // 2] *= nums[i // 2 + 1]
+            del items[i:i + 2]
+            del nums[i // 2 + 1]
+        else:
+            i += 1
 
-    tokens = [int(num) for num in tokens]
-    tokens.append(producto)
+    result = nums[0]
+    i = 1
+    while i < len(items):
+        if items[i] == '+':
+            result += nums[i // 2 + 1]
+        i += 2
 
-    #operación suma
-    for num in tokens:
-        sum += num
-
-    return sum
-
-
-    #return resultado
+    return result
 
 
-operation = str(input("Enter your value: "))
-print(solve(operation))
+print(solve('2 + 7 * 2 + 1'))
+print(solve('2 * 2 * 2 + 32 * 2'))
