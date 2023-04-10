@@ -24,3 +24,4 @@ def solve(string):
 
 print(solve('2 + 7 * 2 + 1'))
 print(solve('2 * 2 * 2 + 32 * 2'))
+###
