@@ -14,7 +14,6 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="range.__getitem__" />
-          <option value="int.append" />
         </list>
       </option>
     </inspection_tool>
