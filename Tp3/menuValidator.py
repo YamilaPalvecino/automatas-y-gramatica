@@ -17,10 +17,10 @@ def menuValidator():
             validator_url(url)
 
         elif select == '3':
-            return
+            validator_IPV4()
 
         elif select == '4':
-            return
+            lexical_Analyzer()
 
         elif select == '5':
             quit()
