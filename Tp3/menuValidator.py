@@ -10,11 +10,11 @@ def menuValidator():
 
         if select == '1':
             email = str(input(ENTER_MAIL))
-            validatorEmail(email)
+            validator_Email(email)
 
         elif select == '2':
             url = input(ENTER_URL).strip()
-            validatorURL(url)
+            validator_URL(url)
 
         elif select == '3':
             ipv4 = input(ENTER_IP)
@@ -22,7 +22,7 @@ def menuValidator():
 
         elif select == '4':
             file = input(ENTER_TEXT)
-            lexicalAnalyzer(file)
+            lexical_Analyzer(file)
 
         else:
             print(INCORRECT_CHOICE)

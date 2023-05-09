@@ -2,35 +2,28 @@ import re
 from constants import *
 
 
-def validatorEmail(emails):
+def validator_Email(emails):
     if re.fullmatch(r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.(com|net|es|org|biz)(\.(ar|br|uk|mx|ur))?$', emails):
         print(f'{emails}', EMAIL_CORRECT)
     else:
         print(f'{emails}', EMAIL_INCORRECT)
 
 
-def validatorURL(url):
+def validator_URL(url):
     if re.fullmatch('(https://|http://)?(www\.)?[A-Za-z0-9_-]+\.[a-zA-Z]{3}(\.[A-Za-z]{2})?(/[A-Za-z0-9_-]+)*(\.(php|html))?(\?([A-Za-z]+=[A-Za-z0-9]+&?)*)?', url):
         print(f'{url}', URL_CORRECT)
     else:
         print(f'{url}', URL_INCORRECT)
 
 
-def validatorIPV4(line):
+def validator_IPV4(line):
     if re.fullmatch('((25[0-5]|000|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$', line):
         print(f'{line}', IP_CORRECT)
     else:
         print(f'{line}', IP_INCORRECT)
 
 
-def validator_IPV4(line):
-    if re.fullmatch('((25[0-5]|000|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$', line):
-        print(f'{line}',IP_CORRECT)
-    else:
-        print(f'{line}',IP_INCORRECT)
-
-
-def lexicalAnalyzer(file):
+def lexical_Analyzer(file):
     with open(f'{file}.txt', 'r', encoding="utf-8") as file_text:
         text = file_text.read()
         words = re.findall(r'\w+', text.lower())
