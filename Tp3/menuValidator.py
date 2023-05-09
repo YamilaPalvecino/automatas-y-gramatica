@@ -10,17 +10,20 @@ def menuValidator():
 
         if select == '1':
             email = str(input(ENTER_MAIL))
-            validator_email(email)
+            validatorEmail(email)
 
         elif select == '2':
-            url = str(input(ENTER_URL))
-            validator_url(url)
+            url = input(ENTER_URL).strip()
+            validatorURL(url)
 
         elif select == '3':
-            return
+            ipv4 = input(ENTER_IP).strip()
+            validatorIPV4(ipv4)
 
         elif select == '4':
-            return
+            #file = str(input(ENTER_TEXT))
+            file = r"C:\Users\EMANUEL\Documents\texto"
+            lexicalAnalyzer(file)
 
         elif select == '5':
             quit()
