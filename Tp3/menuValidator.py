@@ -16,6 +16,14 @@ def menuValidator():
             url = input(ENTER_URL).strip()
             validatorURL(url)
 
+        elif select == '3':
+            ipv4 = input(ENTER_IP)
+            validator_IPV4(ipv4)
+
+        elif select == '4':
+            file = input(ENTER_TEXT)
+            lexicalAnalyzer(file)
+
         else:
             print(INCORRECT_CHOICE)
 
